@@ -211,7 +211,7 @@ class BlockRDD(object):
             if not ascending:
                 rdd = rdd.sortBy(lambda x_i: x_i[1], ascending)
         elif hasattr(index, "__iter__"):
-            # TODO: check monotoniticity to avoid unnunnecessary sorting
+            # TODO: check monotoniticity to avoid unnecessary sorting
             arg = indices.tolist()
             rdd = indexed.filter(lambda x_i: x_i[1] in indices) \
                          .sortBy(lambda x_i: arg.index(x_i[1]))
